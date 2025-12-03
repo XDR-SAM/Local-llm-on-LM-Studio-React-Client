@@ -1,7 +1,9 @@
 export interface Message {
   role: 'user' | 'assistant' | 'system';
   content: string;
+  images?: string[]; // Base64 data URLs
   timestamp: number;
+  isStreaming?: boolean;
 }
 
 export interface Model {
@@ -28,6 +30,21 @@ export interface ChatCompletionResponse {
     completion_tokens: number;
     total_tokens: number;
   };
+}
+
+export interface ChatCompletionChunk {
+  id: string;
+  object: string;
+  created: number;
+  model: string;
+  choices: {
+    index: number;
+    delta: {
+      role?: string;
+      content?: string;
+    };
+    finish_reason: string | null;
+  }[];
 }
 
 export interface ApiError {
