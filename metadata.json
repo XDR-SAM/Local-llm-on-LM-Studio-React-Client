@@ -1,0 +1,5 @@
+{
+  "name": "LM Studio React Client",
+  "description": "A clean, dark-mode themed chat interface connecting to local LM Studio instances via OpenAI-compatible API.",
+  "requestFramePermissions": []
+}
